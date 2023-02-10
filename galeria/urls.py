@@ -3,6 +3,6 @@ from galeria.views import index, galeria
 
 
 urlpatterns = [
-        path("", index),
-        path("imagem/", galeria)
+        path("", index, name="index"),
+        path("imagem/", galeria, name="imagem")
 ]
