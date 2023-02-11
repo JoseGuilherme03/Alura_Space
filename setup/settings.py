@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "galeria",
+    "galeria.apps.GaleriaConfig",  # Referenciando as configurações do app através do apps.py
 ]
 
 MIDDLEWARE = [
@@ -58,6 +58,7 @@ ROOT_URLCONF = "setup.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
+        # Adiciona o diretório templates
         "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -119,12 +120,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+# Indica o diretório onde os arquivos estáticos serão armazenados
 STATIC_URL = "static/"
 
+# Indica o diretório onde os arquivos estáticos serão buscados
 STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, "setup/static")
+    os.path.join(BASE_DIR, "setup/static")
 ]
 
+# Cria o diretório root para os arquivos estáticos
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Default primary key field type
