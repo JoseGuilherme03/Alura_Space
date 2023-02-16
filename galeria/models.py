@@ -22,4 +22,4 @@ class Fotografia(models.Model):
     foto = models.ImageField(upload_to="fotos/%Y/%m/%d/", blank=True)
 
     def __str__(self):
-        return f"[nome={self.nome}]"
+        return self.nome
